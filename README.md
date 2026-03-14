@@ -4,6 +4,10 @@ This project is a technical exploration and prototype of payment gateway integra
 
 > **Note:** This repository is a **prototype/simulation**. All transactions are conducted in the Xendit Sandbox environment for exploratory purposes. No real money is involved.
 
+---
+
+## Payment Flow
+
 ![Payment Flow](docs/flow/xendit-payment-flow.png)
 
 ---
