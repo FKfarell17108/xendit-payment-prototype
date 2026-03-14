@@ -45,13 +45,14 @@ The main goal of this project is to understand the end-to-end flow of digital pa
    ```
 
 3. **Environment Configuration:**
+   
    Create a .env file in the root directory and add your Xendit Secret Key:
    ```bash
    XENDIT_SECRET_KEY=your_xendit_test_key_here
    PORT=3000
    ```
 
-4. **Run the Server:**
+5. **Run the Server:**
    ```bash
    npm start
    ```
