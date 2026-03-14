@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Lab</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial;
+            max-width: 400px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            text-align: center;
+            background: #f4f7f6;
+        }
+
+        .container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+
+        input {
+            padding: 12px;
+            width: 85%;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 12px 25px;
+            background: #1565C0;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 90%;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background: #0D47A1;
+        }
+
+        button:disabled {
+            background: #ccc;
+        }
+
+        .info {
+            font-size: 12px;
+            color: #666;
+            margin-top: 15px;
+        }
+
+        footer {
+            padding: 20px;
+            font-size: 12px;
+            color: #888;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="card">
+            <h2>Total Amount</h2>
+            <input id="amount" type="number" placeholder="Enter Amount (IDR)">
+            <button id="btn-pay" onclick="pay()">Pay via QRIS/Bank</button>
+            <p class="info">Payment Gateway: Xendit</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Payment Lab</p>
+        <p>Developed by Farell Kurniawan</p>
+    </footer>
+
+    <script>
+        async function pay() {
+            const amount = document.getElementById("amount").value;
+            const btn = document.getElementById("btn-pay");
+
+            if (!amount || amount < 1000) {
+                alert("Minimum payment: Rp 1,000");
+                return;
+            }
+
+            btn.disabled = true;
+            btn.innerText = "Processing...";
+
+            try {
+                const response = await fetch("/payment/create", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ amount: parseInt(amount) })
+                });
+
+                const data = await response.json();
+
+                if (data.paymentUrl) {
+                    window.location.href = data.paymentUrl;
+                } else {
+                    alert("Error: " + data.error);
+                    btn.disabled = false;
+                    btn.innerText = "Pay via QRIS/Bank";
+                }
+            } catch (err) {
+                alert("Failed to contact server");
+                btn.disabled = false;
+                btn.innerText = "Pay via QRIS/Bank";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
