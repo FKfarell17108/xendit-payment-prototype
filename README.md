@@ -47,4 +47,10 @@ The main goal of this project is to understand the end-to-end flow of digital pa
    ```bash
    npm start
    ```
-   The app will be available at http://localhost:3000.
+   The app will be available at `http://localhost:3000`.
+
+
+## © 2026 Farell Kurniawan
+
+Copyright © 2026 Farell Kurniawan. All rights reserved.  
+Distribution and use of this code is permitted under the terms of the **MIT** license.
