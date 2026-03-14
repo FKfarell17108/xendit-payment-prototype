@@ -1,4 +1,4 @@
-# Xendit: Payment Gateway Integration - Prototype
+# Xendit: Payment Gateway Integration (Prototype)
 
 This project is a technical exploration and prototype of payment gateway integration using **Xendit**. It originated from my personal interest in learning how secure, automated payment systems work within modern platforms and services.
 
