@@ -4,6 +4,8 @@ This project is a technical exploration and prototype of payment gateway integra
 
 > **Note:** This repository is a **prototype/simulation**. All transactions are conducted in the Xendit Sandbox environment for exploratory purposes. No real money is involved.
 
+---
+
 ## Purpose
 The main goal of this project is to understand the end-to-end flow of digital payments, specifically:
 - Integrating with RESTful Payment APIs.
@@ -11,17 +13,23 @@ The main goal of this project is to understand the end-to-end flow of digital pa
 - Handling asynchronous payment notifications via Webhooks (Callbacks).
 - Managing transaction states in a local database.
 
+---
+
 ## Tech Stack
 - **Backend:** Node.js, Express.js
 - **Database:** SQLite
 - **API:** Xendit Node.js SDK
 - **Frontend:** HTML, CSS, JavaScript
 
+---
+
 ## Features
 - **Dynamic Payment Generation:** Automatically creates unique invoices with QRIS and Virtual Account options.
 - **Simulation Flow:** Supports Xendit's "Simulate Payment" feature to test successful transaction handling.
 - **Automated Webhook:** A dedicated endpoint to receive payment status updates and update the database automatically.
 - **Responsive UI:** A clean, minimal checkout page for a better user experience.
+
+---
 
 ## Installation & Setup
 
@@ -49,6 +57,19 @@ The main goal of this project is to understand the end-to-end flow of digital pa
    ```
    The app will be available at `http://localhost:3000`.
 
+---
+
+## Documentation
+
+<div align="center">
+  <img src="docs/images/images-1.png" width="32%">
+  <img src="docs/images/images-2.png" width="32%">
+  <img src="docs/images/images-3.png" width="32%">
+  <img src="docs/images/images-4.png" width="32%">
+  <img src="docs/images/images-5.png" width="32%">
+</div>
+
+---
 
 ## © 2026 Farell Kurniawan
 
