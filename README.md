@@ -41,8 +41,8 @@ The main goal of this project is to understand the end-to-end flow of digital pa
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/FKfarell17108/xendit-payment.git
-   cd xendit-payment
+   git clone https://github.com/FKfarell17108/xendit-payment-prototype.git
+   cd xendit-payment-prototype
    ```
 
 2. **Install Dependencies:**
